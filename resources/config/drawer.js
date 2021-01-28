@@ -1,79 +1,170 @@
-import * as React from 'react';
-import { Text, View ,StyleSheet,Image,Button,Hoverable} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator,BottomTabBarHeightContext } from '@react-navigation/bottom-tabs';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// import Hoverable from "./Hoverable";
-import Home from "../screens/Home"
-import Login from "../screens/Login"
-import Donateform from "../screens/Donate"
-import List from "../screens/List"
-import { color } from 'react-native-reanimated';
-function HomeScreen() {
-  return (
-    <View>
-      <Home/>
-    </View>
-  );
-}
+// import * as React from 'react';
+// import { Text, View ,StyleSheet,Image,Button,Hoverable,SafeAreaView,ScrollView} from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+// // import Ionicons from 'react-native-vector-icons/Ionicons';
+// // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// // import Hoverable from "./Hoverable";
+// import Home from "../screens/Home"
+// import Login from "../screens/Login"
+// import Donateform from "../screens/Donate"
+// import List from "../screens/List"
+// // import { color } from 'react-native-reanimated';
+// function HomeScreen() {
+//   return (
+// <ScrollView>
+//     <SafeAreaView>
+//     <View>
+//       <Home/>
+//     </View>
+//     </SafeAreaView>
+//     </ScrollView>
+//   );
+// }
 
-function Listin() {
-  return (
-    <View>
-      <List/>
-    </View>
-  );
-}
+// function Listin() {
+//   return (
+//     <ScrollView>
+//     <SafeAreaView>
+//     <View>
+//       <List/>
+//     </View>
+//     </SafeAreaView>
+//     </ScrollView>
+//   );
+// }
 
-function Loginup() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Login/>
-    </View>
-  );
-}
-function Donate() {
-  return (
-    <View>
-      <Donateform/>
-    </View>
-  );
-}
-const Tab = createBottomTabNavigator();
-// const Tabs = BottomTabBarHeightContext();
+// function Loginup() {
+//   return (
+//     <ScrollView>
+//     <SafeAreaView>
+//     <View>
+//       <Login/>
+//     </View>
+//     </SafeAreaView>
+//     </ScrollView>
+//   );
+// }
+// function Donate() {
+//   return (
+//     <ScrollView>
+//     <SafeAreaView>
+//     <View>
+//       <Donateform/>
+//     </View>
+//     </SafeAreaView>
+//     </ScrollView>
+//   );
+// }
+// const Tab = createBottomTabNavigator();
+// // const Tabs = BottomTabBarHeightContext();
 
-export default function MyTabs() {
-  return (
-    // <Hoverable>
-    <Tab.Navigator 
-    tabBarOptions={{
-      labelStyle: { fontWeight:"bold" ,fontSize:18,fontFamily:"arial" ,fontStyle:"italic",textAlign:"center"},
+// const Drawer = createDrawerNavigator();
 
-        style: {
+// export default function MyTabs() {
+//   return (
+//     // <NavigationContainer>
+//       <Drawer.Navigator initialRouteName="Home">
+//         <Drawer.Screen name="Home" component={HomeScreen} />
+//         <Drawer.Screen name="List of Blood Donars" component={Listin} />
+//         <Drawer.Screen name="Conation Form" component={Donate} />
+//         <Drawer.Screen name="Account" component={Loginup} />
+//       </Drawer.Navigator>
+//     // </NavigationContainer>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+// import { StyleSheet} from 'react-native'
+// import Home from '../screens/Home';
+import Donateform from '../screens/Donate';
+// imo
+import List from '../screens/List';
+import Loginscren from '../screens/Login';
+// import Institute from '../Pages/Institute';
+// import Repairing from '../Pages/Repairing';
+// import Parts from '../Pages/Parts';
+// import * as Linking from 'react-native-linking'
+const Stack = createStackNavigator();
+
+export default function Navigation() {
+    return (
+            <Stack.Navigator>
+                <Stack.Screen
+        name="Home"
+        component={Loginscren}
+        options={{
+          title: 'MS Blood Bank Foundation',
+          headerStyle: {
+            backgroundColor: '#870c0c',
+          },
+          headerTintColor: '#fff',
           
-          // backgroundColor:"darkred",
-          alignContent:"center",
-          // color:"white",
-          // fontSize:50,
-          paddingBottom:15,
-        },
-  }}>
-    
-      <Tab.Screen  name= "Home"  component={HomeScreen} /> 
-      <Tab.Screen name="List" component={Listin} />
-      <Tab.Screen name="Form" component={Donate} />
-      <Tab.Screen name="Account" component={Loginup} />
-      
-    </Tab.Navigator>
-    // </Hoverable>
-
-  );
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            textAlign:"center",
+          },
+        }}
+      />
+                {/* <Stack.Screen name="Home" component={Home} /> */}
+                <Stack.Screen name="List"  component={List} 
+                   options={{
+                    title: 'MS Blood Bank Foundation',
+                    headerStyle: {
+                      backgroundColor: '#870c0c',
+                    //   color:"white"
+                    },
+                    headerTintColor: 'white',
+                    
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                      textAlign:"center",
+                      color:"white"
+                    },
+                  }}/>
+                <Stack.Screen name="Donateform" component={Donateform}
+                   options={{
+                    title: 'MS Blood Bank Foundation',
+                    headerStyle: {
+                      backgroundColor: '#870c0c',
+                    //   color:"white"
+                    },
+                    headerTintColor: 'white',
+                    
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                      textAlign:"center",
+                      color:"white"
+                    },
+                  }} />
+            </Stack.Navigator>
+    );
 }
 
-const styles = StyleSheet.create({
-name:{
-  backgroundColor:"red",
-},
 
-})
+
+
+
+
+
+
+

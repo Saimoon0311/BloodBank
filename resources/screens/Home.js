@@ -1,4 +1,4 @@
-import React ,{useState,Component} from 'react';
+import React  from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -13,11 +13,11 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import Login ,{object} from "./Login"
-import { NavigationContainer } from '@react-navigation/native';
-import { LoginManager,AccessToken } from "react-native-fbsdk";
+// import Login ,{object} from "./Login"
+// import { NavigationContainer } from '@react-navigation/native';
+// import { LoginManager,AccessToken } from "react-native-fbsdk";
 import 'react-native-gesture-handler';
-import MyTabs from "../config/drawer"
+// import MyTabs from "../config/drawer"
 import {
   Header,
   LearnMoreLinks,
@@ -30,7 +30,8 @@ import {
 export default function Home (navigation){
   
     return(
-      <SafeAreaView><ScrollView>
+    <ScrollView>
+      <SafeAreaView>
         <View >
 <Text style={styles.header}>MS Blood Bank</Text>
 <Image style={{ width: 400, height: 200 }} source={require('./../images/logo.jpg')}/>
@@ -43,7 +44,8 @@ export default function Home (navigation){
 
 </View>
         </View>
-        </ScrollView></SafeAreaView>
+        </SafeAreaView>
+    </ScrollView>
     )
 }
 

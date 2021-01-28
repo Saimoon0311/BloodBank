@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">BloodBank</string>
-    <string name="facebook_app_id">198457301966357</string>
+    <string name="app_name">Blood Bank</string>
+    <!-- <string name="facebook_app_id">198457301966357</string> -->
+<string name="facebook_app_id">5057885987617840</string>
+<string name="fb_login_protocol_scheme">fb5057885987617840</string>
+<!-- <string name="fb_login_protocol_scheme">fb5057885987617840</string> -->
+
 </resources>
