@@ -37,7 +37,7 @@ import auth from '@react-native-firebase/auth';
 
 export default function Login ({navigation},object){
  
-  const image = { uri: "https://reactjs.org/logo-og.png" }; 
+  const image = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFNHfWwTOugfUscZKbcbuoC_jdVsejEJjwg&usqp=CAU" }; 
 
   async function onFacebookButtonPress({navigation}) {
     // Attempt login with permissions
@@ -58,16 +58,16 @@ export default function Login ({navigation},object){
     const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
     // navigation.replace("Loginscren")
     // Sign-in the user with the credential
-    return auth().signInWithCredential(facebookCredential);
+    await auth().signInWithCredential(facebookCredential);
   
     // console.log("users==>",user)
   }
     return (
     <SafeAreaView><ScrollView>
-      <ImageBackground source={image} style={styles.image}>
+      {/* <ImageBackground source={image} style={styles.image}> */}
         <View style={styles.main} >
         <View style={styles.main}>
-        {/* <Image style={{ width: 400, height: 200 }} source={require('./../images/logo.jpg')}/> */}
+        <Image style={{ width: 400, height: 200 }} source={require('./../images/logo.jpg')}/>
       {/* <Text style={styles.text}>{users.name}</Text> */}
       <Text style={styles.text}>Wellcome To our Foundation</Text>
       {/* <Text style={styles.text}>For more details please</Text> */}
@@ -88,7 +88,7 @@ export default function Login ({navigation},object){
        {/* <Text>Login</Text> */}
        </View>
        </View>
-       </ImageBackground>
+       {/* </ImageBackground> */}
       </ScrollView></SafeAreaView>
   );
 }
@@ -175,7 +175,8 @@ alignItems:'center',
   image:{
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center"
+    justifyContent: "center",
+    // height:800,
   }
 });
 

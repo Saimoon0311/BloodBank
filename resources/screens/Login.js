@@ -65,7 +65,7 @@ export default function Loginscren({navigation}) {
         style={styles.btn}
         onPress={Formss}
       >
-        <Text style={styles.btn}>Blood Donation Form</Text>
+        <Text style={styles.btn}>Be a Donar</Text>
       </TouchableOpacity>
       </View>
       <View style={styles.ss}>

@@ -166,16 +166,21 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import database from "@react-native-firebase/database"
-
+import RNPickerSelect from 'react-native-picker-select';
 
 export default function Donateform ({navigation}){
+//   const selectedItem = {
+//     title: 'Selected item title',
+//     description: 'Secondary long descriptive text ...',
+// };
+
     const [name,setName] =useState("");
     const [email,setEmail] =useState("");
     const [number,setNumber] =useState("");
     const [blood,setBlood] =useState("");
     const [gender,setGander] =useState("");
     const [date,setDate] =useState("");
-    // const [key,setKey]= useState(key)
+    const [location,setLocation]= useState("")
 
       const save_data = ()=>{
       let user ={
@@ -185,6 +190,7 @@ export default function Donateform ({navigation}){
         blood,
         gender,
         date,
+        location,
         // key,
       }
      let key = database().ref('/').child('list').push().key;
@@ -209,11 +215,37 @@ export default function Donateform ({navigation}){
              <Text style={{fontSize:30,color:"#3d0a0a",fontFamily:"sanSarif",fontWeight:"bold"}}>Number</Text>
              <TextInput style={styles.text} onChangeText={(text)=>setNumber(text)} placeholder="0311-1111111" />
              <Text style={{fontSize:30,color:"#3d0a0a",fontFamily:"sanSarif",fontWeight:"bold"}}>Blood Type</Text>
-             <TextInput style={styles.text} onChangeText={(text)=>setBlood(text)} placeholder=" – A, B, AB, O" />
+             <TextInput style={styles.text} onChangeText={(text)=>setBlood(text)} placeholder=" A, B, AB, O" />
+
+
+
+{/* <RNPickerSelect
+            onValueChange={(value) => console.log(value) }
+            items={[
+                { label: 'A', value: 'A' },
+                { label: 'B', value: 'B' },
+                { label: 'AB', value: 'AB' },
+                { label: 'O', value: 'O' },
+            ]}
+        /> */}
+
+{/* <RNPickerSelect
+            pickerProps={{
+                accessibilityLabel: selectedItem.title,
+            }}
+        >
+            <Text>{selectedItem.title}</Text>
+            <Text>{selectedItem.description}</Text>
+        </RNPickerSelect> */}
+
+
+
              <Text style={{fontSize:30,color:"#3d0a0a",fontFamily:"sanSarif",fontWeight:"bold"}}>Gender</Text>
              <TextInput style={styles.text} onChangeText={(text)=>setGander(text)} placeholder="Male/Female" />
              <Text style={{fontSize:30,color:"#3d0a0a",fontFamily:"sanSarif",fontWeight:"bold"}}>Age</Text>
              <TextInput style={styles.text} onChangeText={(text)=>setDate(text)} placeholder="18" />
+             <Text style={{fontSize:30,color:"#3d0a0a",fontFamily:"sanSarif",fontWeight:"bold"}}>Location</Text>
+             <TextInput style={styles.text} onChangeText={(text)=>setLocation(text)} placeholder="Karachi" />
              </View>
              <View style={styles.btns}>
 {/* <Button onPress={save_data} title="save data"/> */}
@@ -241,7 +273,7 @@ const styles = StyleSheet.create({
     //   color:"white",
     },
     hy:{
-        fontSize:40,
+        fontSize:30,
         fontStyle:"italic",
         fontWeight:"bold",
         color:"#961717",

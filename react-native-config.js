@@ -1,0 +1,19 @@
+module.exports ={
+    project:{
+        ios:{},
+        android:{},
+    },
+    dependencies:{
+        '@react-native-community/google-signin':{
+            platform:{
+                ios:null,
+            },
+        },
+        'react-native-fbsdk':{
+            plateforms:{
+                ios:null,
+            },
+        },
+    },
+    assests:['./assests/fonts/'],
+}
